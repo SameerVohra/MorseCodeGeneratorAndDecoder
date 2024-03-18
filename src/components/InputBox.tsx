@@ -11,19 +11,21 @@ interface InputBoxProps {
 const InputBox = forwardRef<HTMLInputElement, InputBoxProps>(
   ({ label, text, onTextChange, isEnabled = true, placeholder }, ref) => {
     return (
-      <div className="mb-4">
-        <label className="block text-gray-200 text-sm font-bold mb-2">
-          {label}
-        </label>
-        <input
-          ref={ref}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          type="text"
-          placeholder={placeholder}
-          value={text}
-          onChange={(e) => onTextChange(e.target.value)}
-          disabled={!isEnabled}
-        />
+      <div className="bg-black p-3 rounded-lg text-sm flex">
+        <div className="mb-4">
+          <label className="block text-gray-200 text-sm font-bold mb-2">
+            {label}
+          </label>
+          <input
+            ref={ref}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            placeholder={placeholder}
+            value={text}
+            onChange={(e) => onTextChange(e.target.value)}
+            disabled={!isEnabled}
+          />
+        </div>
       </div>
     );
   },
